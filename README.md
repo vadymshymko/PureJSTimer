@@ -37,8 +37,8 @@ onUpdate | function | n/a
 onEnd | function | n/a
 
 ### 4. Methods
-Pause:
-yourVarible.pause();
+Stop:
+yourVarible.stop();
 
 Start:
 yourVarible.start();
