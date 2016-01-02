@@ -36,7 +36,7 @@ leadingZero | boolean | false
 onUpdate | function | n/a
 onEnd | function | n/a
 
-### 4. Methods
+#### 3.2 Methods
 Stop:
 yourVarible.stop();
 
