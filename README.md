@@ -34,7 +34,7 @@ minutesToEnd | int | 0
 secondsToEnd | int | 0
 leadingZero | boolean | false
 onUpdate | function | n/a
-onEnd | function | n/a
+onStop | function | n/a
 
 #### 3.2 Methods
 Stop:
