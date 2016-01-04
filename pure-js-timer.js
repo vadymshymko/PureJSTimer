@@ -90,7 +90,7 @@ function PureJSTimer(config) {
   };
 
   scope.destroy = function() {
-    scope.pause();
+    scope.stop();
     scope.timer.innerHTML = '';
   };
 
