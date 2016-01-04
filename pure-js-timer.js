@@ -17,26 +17,6 @@ function PureJSTimer(config) {
   scope.onUpdate          = config.onUpdate          || false;
   scope.onEnd             = config.onEnd             || false;
 
-  scope.build = function() {
-    var daysContainer    = document.createElement('span');
-    var hoursContainer   = document.createElement('span');
-    var minutesContainer = document.createElement('span');
-    var secondsContainer = document.createElement('span');
-
-    scope.timer.className   += ' pure-js-timer';
-    daysContainer.className    = 'pure-js-timer-days';
-    hoursContainer.className   = 'pure-js-timer-hours';
-    minutesContainer.className = 'pure-js-timer-minutes';
-    secondsContainer.className = 'pure-js-timer-seconds';
-
-    scope.timer.appendChild(daysContainer);
-    scope.timer.appendChild(hoursContainer);
-    scope.timer.appendChild(minutesContainer);
-    scope.timer.appendChild(secondsContainer);
-
-    scope.start();
-  };
-
   scope.start = function() {
     scope.startDate         = new Date();
     scope.currentDate       = scope.startDate;
@@ -49,12 +29,12 @@ function PureJSTimer(config) {
       scope.update();
 
       if (scope.days === 0 && scope.hours === 0 && scope.minutes === 0 && scope.seconds === 0) {
-        scope.end();
+        scope.stop();
       }
     }, 1000);
 
     if (scope.days === 0 && scope.hours === 0 && scope.minutes === 0 && scope.seconds === 0) {
-      scope.end();
+      scope.stop();
     }
   };
 
@@ -81,10 +61,6 @@ function PureJSTimer(config) {
     }
   };
 
-  scope.end = function() {
-    clearInterval(scope.interval);
-  };
-
   scope.stop = function() {
     clearInterval(scope.interval);
   };
@@ -92,7 +68,28 @@ function PureJSTimer(config) {
   scope.destroy = function() {
     scope.stop();
     scope.timer.innerHTML = '';
+    for (var property in scope) {
+      if (scope.hasOwnProperty(property)) {
+        delete scope[property];
+      }
+    }
   };
 
-  scope.build();
+  var daysContainer    = document.createElement('span');
+  var hoursContainer   = document.createElement('span');
+  var minutesContainer = document.createElement('span');
+  var secondsContainer = document.createElement('span');
+
+  scope.timer.className   += ' pure-js-timer';
+  daysContainer.className    = 'pure-js-timer-days';
+  hoursContainer.className   = 'pure-js-timer-hours';
+  minutesContainer.className = 'pure-js-timer-minutes';
+  secondsContainer.className = 'pure-js-timer-seconds';
+
+  scope.timer.appendChild(daysContainer);
+  scope.timer.appendChild(hoursContainer);
+  scope.timer.appendChild(minutesContainer);
+  scope.timer.appendChild(secondsContainer);
+
+  scope.start();
 }
