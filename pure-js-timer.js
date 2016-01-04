@@ -56,7 +56,7 @@ function PureJSTimer(config) {
     scope.timer.querySelector('.pure-js-timer-minutes').innerHTML = scope.leadingZero === true && scope.minutes.toString().length === 1 ? '0' + scope.minutes : scope.minutes;
     scope.timer.querySelector('.pure-js-timer-seconds').innerHTML = scope.leadingZero === true && scope.seconds.toString().length === 1 ? '0' + scope.seconds : scope.seconds;
 
-    if (scope.onUpdate !== false) {
+    if (scope.onUpdate) {
       scope.onUpdate(scope);
     }
   };
