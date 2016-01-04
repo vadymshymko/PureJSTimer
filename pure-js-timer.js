@@ -1,5 +1,5 @@
 /*
- * Pure JavaScript countdown timer 1.0
+ * Pure JavaScript countdown timer 1.1
  * Author: Vadym Shymko
  * Author URI: http://ninjadev.pw/
  */
@@ -14,8 +14,8 @@ function PureJSTimer(config) {
   scope.minutesToEnd      = config.minutesToEnd      || 0;
   scope.secondsToEnd      = config.secondsToEnd      || 0;
   scope.leadingZero       = config.leadingZero       || false;
-  scope.onUpdate          = config.onUpdate          || false;
-  scope.onEnd             = config.onEnd             || false;
+  scope.onUpdate          = config.onUpdate          || null;
+  scope.onStop            = config.onStop            || null;
 
   scope.start = function() {
     scope.startDate         = new Date();
@@ -63,6 +63,9 @@ function PureJSTimer(config) {
 
   scope.stop = function() {
     clearInterval(scope.interval);
+    if (scope.onStop) {
+      scope.onStop(scope);
+    }
   };
 
   scope.destroy = function() {
