@@ -40,11 +40,11 @@ onEnd | function | n/a
 Stop:
 yourVarible.stop();
 
+Update:
+yourVarible.update();
+
 Start:
 yourVarible.start();
 
 Destroy:
 yourVarible.destroy();
-
-Build:
-yourVarible.build();
