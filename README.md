@@ -1,5 +1,5 @@
 # PureJSTimer
-Pure JavaScript countdown timer. Demo: http://ninjadev.pw/development/pure-js-timer/
+Pure JavaScript countdown timer. Demo: http://ninjadev.pw/portfolio/pure-js-timer/
 > Tested on IE8+, Microsoft Edge, Chrome, Safari(5.1+), Firefox, Opera, Yandex browser, iPhone, iPad
 
 ## Getting Started
