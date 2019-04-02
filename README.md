@@ -1,4 +1,4 @@
-# PureJSTimer (Deprecated. The new version will be soon)
+# PureJSTimer
 Pure JavaScript countdown timer. Demo: https://vadymshymko.github.io/portfolio/purejstimer/
 > Tested on IE8+, Microsoft Edge, Chrome, Safari(5.1+), Firefox, Opera, Yandex browser, iPhone, iPad
 
